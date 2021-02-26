@@ -8,12 +8,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-const apiRoutes = express.Router();
-apiRoutes.post('/api/users', routes.createUsers);
-apiRoutes.post('/api/login', routes.login);
-
-app.use(apiRoutes);
+app.use(routes);
 
 app.listen(port);
 console.log('conectado na porta ' + port);
